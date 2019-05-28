@@ -1,28 +1,50 @@
-.show-dates {
-  position: relative;
-  padding: 5em;
+
+main{
+  height: 500px;
+  width: 30%;
+  background: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?dpr=0.800000011920929&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=') fixed no-repeat;
+  background-size: cover;
 }
-a {
+#border {
+  width: 350px;
+  height: 350px;
+  border: 1px solid white;
+  opacity: 0;
+  }
+#container{
+  width: 350px;
+  height: 350px;
+  background: inherit;
+  position: absolute;
+  overflow: hidden;
+}
+#container:before{
+  width: 400px;
+  height: 400px;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+  filter: blur(10px);
   opacity: 0;
 }
-.show-dates::before {
+h1{
+  text-align: center;
   position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: "";
-  background-image: url("guitar1.png");
-  background-size: cover;
-  transition: all .6s;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
 }
-
-.show-dates:hover::before {
-  opacity: .6;
-  filter: blur(.5px);
-}
-
-.show-dates:hover::before + a{
+main:hover #container:before{
   opacity: 1;
-}
+}main:hover #border{
+  opacity: 1;
+} 
+main:hover h1{
+  opacity: 1;
+}  
